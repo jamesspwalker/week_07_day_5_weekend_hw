@@ -7,7 +7,7 @@ const PokemonListView = function(container) {
 
 PokemonListView.prototype.bindEvents = function() {
   PubSub.subscribe('Pokemon:pokemon-ready', (evt) => {
-    this.renderPokemonViews(evt.detail.results);
+    this.renderPokemonViews(evt.detail);
   });
 };
 

@@ -11,7 +11,7 @@ const Pokemon = function (url) {
     request.get()
     .then((data) => {
       this.pokemonData = data;
-      PubSub.publish('Pokemon:pokemon-ready', this.pokemonData);
+      PubSub.publish('Pokemon:pokemon-ready', this.pokemonData.results);
       console.log(data);
     });
   };
