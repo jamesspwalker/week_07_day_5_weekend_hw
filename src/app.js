@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   pokemonListView.bindEvents();
 
   const pokemons = new Pokemon("https://pokeapi.co/api/v2/pokemon?offset=0&limit=150");
-    console.log('Pokemon', pokemons);
+    console.log('Here are all the pokemans', pokemons);
   pokemons.getData();
 
 

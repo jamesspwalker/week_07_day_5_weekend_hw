@@ -11,11 +11,20 @@ const Pokemon = function (url) {
     request.get()
     .then((data) => {
       this.pokemonData = data;
-      PubSub,publish('Pokemon:pokemon-ready', this.pokemonData);
+      PubSub.publish('Pokemon:pokemon-ready', this.pokemonData);
       console.log(data);
     });
   };
 
+Pokemon.prototype.handleDataReady = function (pokemons) {
+  const pokemonNames = this.getPokemonNames(pokemons);
+  console.log(pokemonNames);
+}
+
+Pokemon.prototype.getPokemonNames = function (pokemons) {
+  return pokemons
+    .map(pokemon => pokemon.name)
+}
 
 
 module.exports = Pokemon;
